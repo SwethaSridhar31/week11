@@ -69,12 +69,7 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["10.0.0.0/24"]
   }
   // connectivity to ubuntu mirrors is required to run `apt-get update` and `apt-get install apache2`
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+  
 }
 
 output "web-address" {
